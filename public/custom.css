@@ -1,0 +1,195 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&subset=latin-ext');
+
+  body {
+    background: #fafafa;
+    font-family: Open Sans, sans-serif;
+    font-weight: 300;
+}  
+#myCarousel {
+    height: 450px;
+    overflow: hidden;
+}
+input {
+    outline:none !important;
+}
+.navbar-brand>img { 
+    display: inline-block;
+}
+img { 
+    max-width: 100%;
+    
+}
+.navbar-right {
+    padding:5px 0px;
+}
+ 
+ .admin_menu_top {
+     display: table;
+     width:100%;
+ }
+ .admin_menu_top .navbar-brand {
+     width: 100%;
+     padding: 8px 15px;
+ }
+ .admin_menu_top .navbar-header {
+float: none;
+ }
+.logo_sklep { 
+  
+    width: 100%;   
+     
+    text-align: center;
+    
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.saldo {
+        /* background: rgba(255,255,255,0.2); */
+    color: #e85541;
+    border: 1px solid #e85541;
+}
+.wyszukiwarka input[type=text]{
+        width: 100%;
+    background: #fafafa;
+    border: 0px;
+    border-width: 0px;
+    outline: none;
+    box-shadow: none;
+}
+.wyszukiwarka button {
+        background: #da2b2b;
+    /* color: #fff; */
+    color:#fff;
+border: 1px solid #da2b2b;
+}
+.menu-poziome li {
+padding: 5px 15px;
+}
+ 
+.page-header {
+    background: #fafafa;
+    font-weight: 300;
+    padding: 10px;
+}
+.page-header.section {
+        background: #fff;
+    padding: 5px 20px;
+    border-radius: 25px;
+    font-weight: 300;
+    display: inline-block;
+    color: #383838;
+}
+input, button {
+    border-radius: 0px;
+}
+.btn-primary { 
+        background-color: #da2b2b;
+    border-color: #da2b2b;
+}
+.input-group-btn {
+    width: 36px !important;
+}
+.navbar-nav>li>a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+footer { 
+        background: #fff;
+    padding: 25px 0;
+    position: relative;
+    bottom:0px;
+    width: 100%;
+}
+.promocja_dyskont {
+     position: absolute;
+ 
+    font-size: 16px;
+    font-weight: 700;
+    color: #e85541;
+    right: 15px;
+    top: 0;
+    margin: 10px;
+    border: 1px dashed;
+    padding: 5px 10px;
+}
+.promocja_dyskont::before {
+       content: "\f02b";
+    font-size: 18px;
+    padding: 0px 5px;
+    color: #e85541;
+    font-family: FontAwesome;
+}
+.navbar-default .navbar-brand {
+    color: #fff;
+    font-weight: 300;
+    text-align: center;
+}
+@media (min-width: 768px) {
+.navbar>.container .navbar-brand, .navbar>.container-fluid .navbar-brand {
+     margin-left: 0; 
+}
+}
+.navbar-form .input-group { 
+     width: 100%;
+} 
+   
+    .navbar-static-top .col-sm-2 {
+        float: none;
+        display: table-cell;
+        background: #222;
+
+    }
+    .navbar-static-top .col-sm-10 {
+        float: none;
+        display: table-cell;
+        
+    }
+ 
+    .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:focus, .navbar-default .navbar-nav>.open>a:hover {
+        /* color:#fff; */
+        background-color: rgba(2555,255,255,0.1);
+    }
+    .list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+        background-color: #db3a30;
+        border:1px solid #db3a30;
+    }
+    .carousel-control span { 
+        position: absolute;
+        top: 50%;
+    }
+    .carousel-indicators li.active, .carousel-indicators li {
+        width:10%;
+    }
+    .product__panel { 
+        padding: 10px;
+    }
+    .title__site {
+        font-weight: 300;
+        color: #7d7d7d;
+        text-transform: capitalize;
+        font-size: 28px;
+        margin: 30px 0;
+        display: block;
+        overflow: hidden;
+        width: auto;
+    }
+    .product__name { 
+        font-weight: 300;
+        font-size: 19px;
+        display: block;
+        height: 24px;
+        overflow: hidden;
+    }
+    .product__price { 
+     clear: both;
+    display: block;
+    color: #db3a30;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none !important;
+}
+ 
