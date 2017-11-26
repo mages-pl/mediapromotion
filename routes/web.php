@@ -32,14 +32,17 @@ Route::get('/sklepy/utworz','ShopsController@create');
 Route::get('/sklepy/{id}','ShopsController@show');
 */
 
-Route::resource("sklepy","ShopsController");
-Route::resource("promocje","PromotionsController");
+Route::resource("shops","ShopsController");
+Route::resource("promotions","PromotionsController");
 Route::resource("settings","SettingsController");
 Route::resource("products","ProductsController");
 Route::resource("invoices","InvoicesController");
 
 
-Route::get('list','ProductsController@productslist');
+Route::get('products-list','ProductsController@productslist');
+Route::get('promotions-list','PromotionsController@promotionslist');
+
+Route::get('invoices-download',"InvoicesController@download");
 
 Auth::routes();
 

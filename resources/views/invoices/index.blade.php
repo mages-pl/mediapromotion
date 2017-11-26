@@ -51,7 +51,10 @@ Status
 @foreach($invoices as $invoice)
 <tr>
 <td>
-{{ $invoice->numer_faktury }}
+<a href="/invoices-download">{{ $invoice->nr_faktury }}</a>
+</td>
+<td>
+{{ $invoice->rodzaj_faktury }}
 </td>
 <td>
 {{ $invoice->data_wystawienia }}
@@ -60,7 +63,12 @@ Status
 {{ $invoice->wartosc_faktury }}
 </td>
 <td>
-{{ $invoice->status_faktury }}
+@if( $invoice->status_faktury == 0)
+<i class="fa fa-exclamation-triangle" aria-hidden="true"></i> nieopłacona
+@else
+<i class="fa fa-check" aria-hidden="true"></i> 
+opłacona
+@endif
 </td>
 
 </tr>

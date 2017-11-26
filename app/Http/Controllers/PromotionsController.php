@@ -12,6 +12,13 @@ use Auth;
 
 use Session;
 
+
+use Illuminate\Support\Facades\DB;
+
+use Illuminate\Pagination\Paginator;
+
+use Illuminate\Pagination\LengthAwarePaginator;
+
 class PromotionsController extends Controller
 {
     //
@@ -26,6 +33,14 @@ public function index() {
 public function show() {
 return "show";
 }    
+public function promotionslist() {
+
+    $promotions = DB::table('promotions')->paginate(4);
+
+    return view('promotions.promotionlist')->with("promotions",$promotions);
+     
+}
+
 public function create() {
  
 return view("promotions.create");
@@ -41,7 +56,7 @@ $promotion = new Promotion($request->all());
   // Promotion::create($request->all());
     //return redirect("promocje/".$promotion->id."/edit");
 //return $promotion;
-return redirect("promocje/");
+return redirect("promotions/");
 //return "store";
 }    
 }

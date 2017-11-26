@@ -31,7 +31,7 @@ Sklepy
 {{ str_limit($shop->opis_sklepu,$limit=125)}}
 </div>
 <div class="card-footer">
-<a href="/sklepy/{{$shop->id}}" class="btn btn-primary"><i class="fa fa-user" aria-hidden="true"></i>
+<a href="/shops/{{$shop->id}}" class="btn btn-primary"><i class="fa fa-user" aria-hidden="true"></i>
  {{$shop->nazwa_sklepu}}  
  </a> 
 </div>

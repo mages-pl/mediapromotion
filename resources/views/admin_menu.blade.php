@@ -3,11 +3,11 @@
 <a href="#dashboard" class="list-group-item active">
 <i class="fa fa-tachometer" aria-hidden="true"></i>
 Pulpit</a>
-<a href="/list" class="list-group-item">
+<a href="/products-list" class="list-group-item">
 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
 Sklep</a>
- <a href="/promocje/create" class="list-group-item"><i class="fa fa-tags" aria-hidden="true"></i>
+ <a href="/promotions-list" class="list-group-item"><i class="fa fa-tags" aria-hidden="true"></i>
 Promocje</a>
 <a href="/statistics" class="list-group-item">
 <i class="fa fa-bar-chart" aria-hidden="true"></i>

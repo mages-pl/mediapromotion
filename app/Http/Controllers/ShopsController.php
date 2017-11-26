@@ -14,9 +14,12 @@ use Session;
 
 use Image; 
 
+use App\Product;
 
 use Intervention\Image\ImageManager;
 
+
+use Illuminate\Support\Facades\DB;
 
 class ShopsController extends Controller
 {
@@ -36,7 +39,11 @@ class ShopsController extends Controller
     */
     public function show($id) { 
         $shop = Shop::findOrFail($id);
-        return view("shops.show")->with("shop",$shop);
+       // $products = Product::where('user_id','1');
+        $products = DB::table('products')->where('user_id', '1')->latest()->get();
+        
+
+        return view("shops.show")->with("shop",$shop)->with('products',$products);
     }
 
     /*

@@ -12,6 +12,8 @@ use Illuminate\Pagination\Paginator;
 
 use Illuminate\Pagination\LengthAwarePaginator;
 
+use Dompdf\Dompdf;
+
 
 class InvoicesController extends Controller
 {
@@ -38,6 +40,26 @@ public function index() {
 }
 public function create() {
     return "tworzenie pv";
+}
+
+public function download() {
+ 
+$invoices = Invoice::findOrFail('1');
+
+
+$dompdf = new Dompdf();
+$dompdf->loadHtml("<b>gfgfdgdg</b><br/><br/><table><tr><td>nazwa</td><td>nazwa2</td></tr></table>");
+
+// (Optional) Setup the paper size and orientation
+$dompdf->setPaper('A4', 'landscape');
+
+// Render the HTML as PDF
+$dompdf->render();
+
+// Output the generated PDF to Browser
+$dompdf->stream();
+
+    //return "download.pdf";
 }
 
 }

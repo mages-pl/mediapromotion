@@ -88,7 +88,7 @@ Stwórz konto</a></li>
 
                                 <ul class="dropdown-menu" role="menu">
                                 <li>
-                                <a href="/sklepy/{{Auth::user()->id}}/edit">
+                                <a href="/shops/{{Auth::user()->id}}/edit">
                                 Moje konto
                                 </a>
                                 </li>
@@ -122,13 +122,13 @@ Stwórz konto</a></li>
               <a href="/#dziecko">Dodatki</a>
             </li>
             <li>
-              <a href="/sklepy">Sklepy</a>
+              <a href="/shops">Sklepy</a>
             </li>
             <li>
-              <a  href="/promocje">Promocje</a>
+              <a  href="/promotions">Promocje</a>
             </li>
             <li>
-              <a  href="/marki">Marki</a>
+              <a  href="/brands">Marki</a>
             </li>
           
 

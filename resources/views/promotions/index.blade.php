@@ -26,7 +26,7 @@ Promocje
 {{ str_limit($promotion->opis_promocji,$limit=125)}}
 </div>
 <div class="card-footer">
-<a href="/promocje/{{$promotion->id}}" class="btn btn-primary"><i class="fa fa-user" aria-hidden="true"></i>
+<a href="/promotions/{{$promotion->id}}" class="btn btn-primary"><i class="fa fa-user" aria-hidden="true"></i>
 {{$promotion->user->name}}</a>
  <div class="clearfix"></div>
  <i class="fa fa-clock-o" aria-hidden="true"></i>

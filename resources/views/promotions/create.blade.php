@@ -11,7 +11,7 @@ Promocje
  </div>
  <div class="panel-body">
  
-{!! Form::open(['url'=>'promocje','class'=>'form-horizontal']) !!}
+{!! Form::open(['url'=>'promotions','class'=>'form-horizontal']) !!}
 
 
 @include('promotions.form_errors')

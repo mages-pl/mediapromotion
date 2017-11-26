@@ -67,7 +67,7 @@ Stwórz konto</a></li>
 
                                 <ul class="dropdown-menu" role="menu">
                                 <li>
-                                <a href="/sklepy/{{Auth::user()->id}}/edit">
+                                <a href="/shops/{{Auth::user()->id}}/edit">
                                 Moje konto
                                 </a>
                                 </li>

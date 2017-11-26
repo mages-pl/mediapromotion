@@ -8,7 +8,7 @@
 Dodawanie sklepu
 </h1>
  
-{!! Form::open(['url'=>'sklepy','class'=>'form-horizontal']) !!}
+{!! Form::open(['url'=>'shops','class'=>'form-horizontal']) !!}
 
 
 @include('shops.form_errors')
