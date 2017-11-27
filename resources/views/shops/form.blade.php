@@ -47,7 +47,7 @@
 <div class="col-md-6">
 {!! Form::file('logo_sklepu', null, ['class'=>'form-control']) !!}
 {{--  <input type="text" name="nazwa_sklepu" class="form-control"/>  --}}
-<img src="{{ URL::asset('img/shops/logo/'.$edycja_sklepu->logo_sklepu) }}" alt="logo sklepu"/>
+<img src="{{ URL::asset('img/shops/logo/'.$edycja_sklepu->logo_sklepu) }}" class="thumbnail" alt="logo sklepu"/>
 </div>
 </div>
 <div class="form-group">

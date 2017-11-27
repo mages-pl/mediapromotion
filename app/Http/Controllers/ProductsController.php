@@ -12,6 +12,7 @@ use Illuminate\Pagination\Paginator;
 
 use Illuminate\Pagination\LengthAwarePaginator;
 
+use Auth;
 
 class ProductsController extends Controller
 {
@@ -27,10 +28,11 @@ $this->middleware('auth',['only'=>['product-list']]);
     }
 
     public function productslist() { 
-$products = DB::table('products')->paginate(4);
+$products = DB::table('products')->where("user_id",Auth::User()->id)->latest()->paginate(4);
 
+$qty_items = DB::table('products')->where("user_id",Auth::User()->id)->count();
         //$products = Product::latest()->get();
          
-        return view('products.productlist')->with("products",$products);
+        return view('products.productlist')->with("products",$products)->with("qty",$qty_items);
     }
  }

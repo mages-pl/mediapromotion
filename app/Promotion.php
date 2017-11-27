@@ -18,7 +18,7 @@ class Promotion extends Model
     ];
 
 /*
-Promocje posiada sklep
+Promocje posiada sklep (user)
 */
     public function user() { 
         return $this->belongsTo("App\User");

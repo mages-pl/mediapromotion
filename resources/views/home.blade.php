@@ -42,7 +42,7 @@
 </div>
 <!-- end slider --> 
 <div class="container">
-<h1 class="title__site">Najnowsze produkty</h1>
+<h1 class="title__site home">Najnowsze produkty</h1>
 @foreach($last_products as $last_product)
 <div class="col-sm-3">
 <div class="panel panel-default product__panel">

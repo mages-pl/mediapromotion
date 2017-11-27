@@ -67,7 +67,7 @@ $shop = new Shop(
 //     "/public/img/shops/logo", $logoName
 // );
 
-    return redirect("sklepy/".$shop->id."/edit")->with("message","test");
+    return redirect("shops/".$shop->id."/edit")->with("message","test");
     }
 
     public function edit($id) {

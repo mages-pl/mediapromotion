@@ -9,6 +9,9 @@
 Produkty
 </h3>
  </div>
+ <span>
+ Produktów: {{ $qty }}
+ </span>
  <div class="panel-body">
 <table class="table table-striped">
 <thead>
@@ -37,7 +40,7 @@ Cena
 
 <td>{{ $product->nazwa_produktu }}</td>
 <td>rtre</td>
-<td>{{ $product->cena_produktu }}</td>
+<td>{{ number_format($product->cena_produktu,2) }}</td>
 
 </tr>
 

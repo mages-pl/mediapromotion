@@ -15,7 +15,7 @@ Faktury
     Dodaj nową fakturę
     </div>
     <div class="panel-body">
-   {{ Form::open(['url'=>'/invoices/create', 'class'=>'form-inline']) }}
+   {{ Form::open(['url'=>'invoices', 'class'=>'form-inline']) }}
 
 {{ Form::text('wartosc_faktury',null,['class'=>'form-control'])}}
 {{ Form::submit('Wygeneruj fakturę pforoma',['class'=>'btn btn-success'])}}
@@ -60,7 +60,7 @@ Status
 {{ $invoice->data_wystawienia }}
 </td>
 <td>
-{{ $invoice->wartosc_faktury }}
+{{ number_format($invoice->wartosc_faktury,2) }}
 </td>
 <td>
 @if( $invoice->status_faktury == 0)

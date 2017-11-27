@@ -43,5 +43,8 @@ Użytkownik posiada sklep
      public function promocje() { 
         return $this->hasMany("App\Promotion");
     }
+    public function faktury() {
+        return $this->hasMany("App\Invoice");
+    }
     
 }
