@@ -80,33 +80,94 @@ $shop = new Shop(
     public function update($id, CreateShopRequest $request) { 
         $aktualizuj_sklep = Shop::findOrFail($id);
 
-        $aktualizuj_sklep->update(
-          // $request->all()
-              array(
-                  'nazwa_sklepu'=>$request->get('nazwa_sklepu'),
-                  'opis_sklepu'=>$request->get('opis_sklepu'),
-                  'link_sklepu'=>$request->get('link_sklepu'),
-                  'logo_sklepu'=>$id.'-logo.'.$request->file('logo_sklepu')->getClientOriginalExtension()
+
+
+        // if($aktualizuj_sklep->logo_sklepu == '') { 
+        // $aktualizuj_sklep->update(
+        //   // $request->all()
+        //       array(
+        //           'nazwa_sklepu'=>$request->get('nazwa_sklepu'),
+        //           'opis_sklepu'=>$request->get('opis_sklepu'),
+        //           'link_sklepu'=>$request->get('link_sklepu'),
+        //           'logo_sklepu'=>$id.'-logo.'.$request->file('logo_sklepu')->getClientOriginalExtension()
                 
-                  )
-         );
+        //           )
+        //  );
+
+        //  $logoName = $id.'-logo.'.$request->file('logo_sklepu')->getClientOriginalExtension();
+         
+        //    $request->file('logo_sklepu')->move(
+        //         public_path()."/img/shops/logo", $logoName
+        //    );
  
-          $logoName = $id.'-logo.'.$request->file('logo_sklepu')->getClientOriginalExtension();
+        //    $image_oryginal = public_path()."/img/shops/logo/".$logoName;
+ 
+        //    $img_min= Image::make($image_oryginal)->resize(300, 300);
+        //    $img_min->save(public_path()."/img/shops/logo/300x300-".$logoName);
+      
+ 
+
+        // } 
         
-          $request->file('logo_sklepu')->move(
-               public_path()."/img/shops/logo", $logoName
-          );
+        
+      //  else {
 
-          $image_oryginal = public_path()."/img/shops/logo/".$logoName;
+            // jezeli logotypu jest ma w formie 
+            if($request->file('logo_sklepu') != '') {
 
-          $img_min= Image::make($image_oryginal)->resize(300, 300);
-          $img_min->save(public_path()."/img/shops/logo/300x300-".$logoName);
-     
+               
+                $aktualizuj_sklep->update(
+                    // $request->all()
+                        array(
+                            'nazwa_sklepu'=>$request->get('nazwa_sklepu'),
+                            'opis_sklepu'=>$request->get('opis_sklepu'),
+                            'link_sklepu'=>$request->get('link_sklepu'),
+                            'logo_sklepu'=>$id.'-logo.'.$request->file('logo_sklepu')->getClientOriginalExtension(),
+                            'xml_sklepu' => $request->get('xml_sklepu')
+                            )
+                   );
+          
+                   $logoName = $id.'-logo.'.$request->file('logo_sklepu')->getClientOriginalExtension();
+                   
+                     $request->file('logo_sklepu')->move(
+                          public_path()."/img/shops/logo", $logoName
+                     );
+           
+                     $image_oryginal = public_path()."/img/shops/logo/".$logoName;
+           
+                     $img_min= Image::make($image_oryginal)->resize(300, 300);
+                     $img_min->save(public_path()."/img/shops/logo/300x300-".$logoName);
+                
+           
+                     Session::flash("update_shop","Zapisano pomyslnie.");
+                     
+                             //return ($image_oryginal);
+                              return redirect('shops/'.$aktualizuj_sklep->id.'/edit')->with("path",$image_oryginal);
+           
 
-        Session::flash("update_shop","Zapisano pomyslnie.");
+            } 
 
-        //return ($image_oryginal);
-         return redirect('sklepy/'.$aktualizuj_sklep->id.'/edit')->with("path",$image_oryginal);
+            // jezeli logotypu nie ma w formie  
+            
+            else {
+                $aktualizuj_sklep->update(
+                array(
+                    'nazwa_sklepu'=>$request->get('nazwa_sklepu'),
+                    'opis_sklepu'=>$request->get('opis_sklepu'),
+                    'link_sklepu'=>$request->get('link_sklepu'),
+                    'logo_sklepu'=>$aktualizuj_sklep->logo_sklepu,
+                    'xml_sklepu' => $request->get('xml_sklepu')
+                    
+                    )
+                );
+                Session::flash("update_shop","Zapisano pomyslnie.");
+                
+                        //return ($image_oryginal);
+                         return redirect('shops/'.$aktualizuj_sklep->id.'/edit');
+                      
+            }
+       // }
+         
       // return "Saved settings to shop";
         
     }

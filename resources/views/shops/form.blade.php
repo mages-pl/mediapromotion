@@ -32,7 +32,17 @@
  
 <div class="col-md-6">
 {!! Form::text('link_sklepu', null, ['class'=>'form-control']) !!}
-{{--  <input type="text" name="nazwa_sklepu" class="form-control"/>  --}}
+
+</div>
+</div>
+
+<div class="form-group row col-sm-12">
+<div class="col-sm-4 col-form-label">
+ {!! Form::label('xml_sklpeu','Plik XML sklepu') !!}
+</div>
+ 
+<div class="col-md-6">
+{!! Form::text('xml_sklepu', null, ['class'=>'form-control']) !!}
 
 </div>
 </div>

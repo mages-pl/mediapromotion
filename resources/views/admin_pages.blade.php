@@ -1,6 +1,6 @@
 @include("admin_header")
 
-<div class="container-fluid">
+<div class="container-fluid" id="admin-page">
         @yield('content')
         </div>
     </div>

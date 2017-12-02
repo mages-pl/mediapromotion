@@ -18,7 +18,7 @@
 </head>
 <body>
     <div id="app">
-      <nav class="navbar navbar-default navbar-static-top">
+      <nav id="admin_top_menu" class="navbar navbar-default navbar-static-top">
             <div class="container-full">
             <div class="admin_menu_top">
             <div class="col-sm-2">

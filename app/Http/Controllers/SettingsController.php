@@ -14,6 +14,8 @@ class SettingsController extends Controller
    //
     public function __construct() {
         $this->middleware('auth');
+
+     
     }
 
   public function index() {
@@ -27,7 +29,13 @@ public function edit($id) {
 //return "edit";
 $edit_shop = Setting::findOrFail($id);
 
+if(Auth::user()->id == $edit_shop->user_id) { 
+ 
 return view("settings.edit")->with("edit_shop",$edit_shop);
+} else {
+  return view("403");
+}
+
 }
 public function update($id, CreateSettingRequest $request) { 
 $update_shop = Setting::findOrFail($id);

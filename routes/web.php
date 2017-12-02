@@ -21,6 +21,19 @@ Route::get('/platnosci','PagesController@platnosci');
 Route::get('/statystyki','PagesController@statystyki');
 
 /*
+Filtrowanie routingu
+*/
+
+// Route::filter('restriction',function($route) {
+// $setting_id = $route->parameter('settings');
+
+// if(!Auth::user()->setting()->find($setting_id)) { 
+//     return Redirect::to('/');
+// }
+// });
+  
+
+/*
 Warstwa pośrednicząca middleware
 */
 
@@ -34,10 +47,12 @@ Route::get('/sklepy/{id}','ShopsController@show');
 
 Route::resource("shops","ShopsController");
 Route::resource("promotions","PromotionsController");
-Route::resource("settings","SettingsController");
+Route::resource("settings","SettingsController",array('before' => 'restrictPermission'));
 Route::resource("products","ProductsController");
 Route::resource("invoices","InvoicesController");
 
+ 
+ 
 
 Route::get('products-list','ProductsController@productslist');
 Route::get('promotions-list','PromotionsController@promotionslist');

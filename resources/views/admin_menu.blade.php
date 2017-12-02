@@ -1,6 +1,6 @@
 <div class="col-md-4">
 <div class="list-group">
-<a href="#dashboard" class="list-group-item active">
+<a href="/shops/{{Auth::user()->id}}/edit" class="list-group-item">
 <i class="fa fa-tachometer" aria-hidden="true"></i>
 Pulpit</a>
 <a href="/products-list" class="list-group-item">

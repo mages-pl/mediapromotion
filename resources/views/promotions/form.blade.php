@@ -1,5 +1,5 @@
-{{--  <input type="hidden" name="user_id" id="user_id" value="1">  --}}
-{{--  {!! Form::hidden("user_id",1) !!}  --}}
+ 
+
 <div class="form-group row col-sm-12">
 <div class="col-sm-4 col-form-label">
 
@@ -7,20 +7,29 @@
 </div>
  
 <div class="col-md-6">
+@if($ValuesForm == "0")
 {!! Form::text('nazwa_promocji', null, ['class'=>'form-control']) !!}
+@endif
+@if($ValuesForm != "0")
+{!! Form::text('nazwa_promocji', $edit_promotion->nazwa_promocji, ['class'=>'form-control']) !!}
+@endif
 {{--  <input type="text" name="nazwa_sklepu" class="form-control"/>  --}}
 
 </div>
 </div>
-
+ 
 <div class="form-group row col-sm-12">
 <div class="col-sm-4 col-form-label">
  {!! Form::label('opis_promocji','Opis promocji') !!}
 </div>
  
 <div class="col-md-6">
+@if($ValuesForm == "0")
 {!! Form::textarea('opis_promocji', null, ['class'=>'form-control']) !!}
- 
+@endif
+@if($ValuesForm != "0")
+{!! Form::textarea('opis_promocji', $edit_promotion->opis_promocji, ['class'=>'form-control']) !!}
+ @endif
 </div>
 </div>
 
@@ -30,9 +39,13 @@
 </div>
  
 <div class="col-md-6">
+@if($ValuesForm == "0")
 {!! Form::text('kod_promocji', null, ['class'=>'form-control']) !!}
-{{--  <input type="text" name="nazwa_sklepu" class="form-control"/>  --}}
-
+@endif
+@if($ValuesForm != "0")
+{!! Form::text('kod_promocji', $edit_promotion->kod_promocji, ['class'=>'form-control']) !!}
+@endif
+  
 </div>
 </div>
 
@@ -44,9 +57,13 @@
  {{--  {{ var_dump($errors) }}  --}}
 
 <div class="col-md-6">
+@if($ValuesForm == "0")
 {!! Form::text('wartosc_promocji', null, ['class'=>'form-control',"maxlength"=>"2","pattern"=>"[0-9]{2}"]) !!}
-{{--  <input type="text" name="nazwa_sklepu" class="form-control"/>  --}}
-
+@endif
+@if($ValuesForm != "0")
+{!! Form::text('wartosc_promocji', $edit_promotion->wartosc_promocji, ['class'=>'form-control',"maxlength"=>"2","pattern"=>"[0-9]{2}"]) !!}
+@endif
+ 
 </div>
 </div>
 
@@ -56,21 +73,29 @@
  
  {!! Form::label('promocja_od','Czas promocji') !!}
 </div>
- {{--  {{ var_dump($errors) }}  --}}
+  
 
 <div class="col-md-3">
+@if($ValuesForm == "0")
 {!! Form::date('promocja_od', null, ['class'=>'form-control']) !!}
-{{--  <input type="text" name="nazwa_sklepu" class="form-control"/>  --}}
-
+@endif
+@if($ValuesForm != "0")
+{!! Form::date('promocja_od', $edit_promotion->promocja_od, ['class'=>'form-control']) !!}
+ 
+@endif
 </div>
 <div class="col-md-3">
  
+ @if($ValuesForm == "0")
 {!! Form::date('promocja_do', null, ['class'=>'form-control']) !!}
-{{--  <input type="text" name="nazwa_sklepu" class="form-control"/>  --}}
+@endif
+@if($ValuesForm != "0")
+{!! Form::date('promocja_do', $edit_promotion->promocja_do, ['class'=>'form-control']) !!}
 
+@endif
 </div>
 </div>
- 
+    
 
 
 <div class="form-group">

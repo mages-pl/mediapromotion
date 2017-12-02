@@ -10,7 +10,31 @@ Meble
 </div>
 
 </div>
+{{--  {{ print_r($responsejson)}}  --}}
 
+{{--  @foreach($user_xml as $url_xml)
+ {{$url_xml->xml_sklepu}}
+@endforeach  --}}
+{{--  {{$user_xml}}  --}}
+
+@foreach($responsedata->offers->offer as $item) 
+
+<div class="col-sm-3">
+<div class="panel panel-default product__panel">
+<a href="{{$item->url}}">
+<div class="product__image">
+<img src="{{ $item->imgs->img[0] }}" alt="{{ $item->name }}" />
+</div>
+<span class="product__name">{{ $item->name }}</span>
+<span class="product__price">{{ $item->price }} zł</span>
+</a>
+</div>
+</div>
+
+@endforeach
+<br/>
+<br/>
+{{--  
 @foreach($products as $product)
 <div class="col-sm-3">
 <div class="panel panel-default product__panel">
@@ -19,5 +43,5 @@ Meble
 <span class="product__price">{{ $product->cena_produktu }} zł</span>
 </div>
 </div>
-@endforeach
+@endforeach  --}}
 @endsection

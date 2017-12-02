@@ -62,9 +62,13 @@ Nieaktywna
 <a href="/promotions/{{$promotion->id}}/edit" class="btn btn-default">
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 </a>
- <a href="#" class="btn btn-default">
+{!! Form::open(['method'=>'DELETE','class'=>'form-inline','action'=>['PromotionsController@destroy',$promotion->id]]) !!}
+ <button class="btn btn-default"> 
+ {{--  <a href="/promotions/{{$promotion->id}}/destroy" class="btn btn-default">  --}}
  <i class="fa fa-trash-o" aria-hidden="true"></i>
-</a>
+{{--  </a>  --}}
+</button>
+{!! Form::close() !!}
  </td>
 </tr>
 

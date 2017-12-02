@@ -6,7 +6,7 @@
   
  <div class="panel-heading">
 <h3>
-Promocje
+Nowa promocja
 </h3>
  </div>
  <div class="panel-body">
@@ -15,7 +15,7 @@ Promocje
 
 
 @include('promotions.form_errors')
-@include('promotions.form',["ButtonSave"=>"Dodaj"])
+@include('promotions.form',["ButtonSave"=>"Dodaj","ValuesForm"=>"0"])
 
 
 
