@@ -14,6 +14,8 @@ use Illuminate\Pagination\LengthAwarePaginator;
 
 use Auth;
 
+use User;
+
 use XmlParser;
 
 class ProductsController extends Controller

@@ -14,7 +14,12 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="{{ URL::asset('css/font-awesome.min.css') }}" />
 
-     <link rel="stylesheet" href="{{ URL::asset('custom.css') }}" />   
+     <link rel="stylesheet" href="{{ URL::asset('custom.css') }}" />  
+     <script type="text/javascript" src="{{ URL::asset('js/jquery.min.js')}}"></script>
+    
+     <script type="text/javascript" src="{{ URL::asset('js/lazzy.min.js')}}"></script>
+     <script type="text/javascript" src="{{ URL::asset('js/mediapromotion.js')}}"></script>
+      
 </head>
 <body>
     <div id="app">
