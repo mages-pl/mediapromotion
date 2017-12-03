@@ -27,7 +27,7 @@ class CreateShopRequest extends FormRequest
             'nazwa_sklepu'=>'required',
           'opis_sklepu'=>'required',
             'link_sklepu'=>'required',
-            'logo_sklepu'=>'mimes:png,jpg,jpeg'
+            'logo_sklepu'=>'mimes:jpg,jpeg'
               
         ];
     }

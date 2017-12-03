@@ -49,7 +49,10 @@ Meble
 
  <div class="panel panel-default" id="frontend__left_menu">
  <h3 class="panel-heading">Cena</h3>
- <form class="" style="margin: 15px;"><div class="form-group"><div class="col-sm-6"><input type="text" class="form-control"></div><div class="col-sm-6"><input type="text" class="form-control"></div>
+ <form class="" style="margin: 15px;">
+ <div class="form-group">
+ <div class="col-sm-6"><input type="text" placeholder="500" class="form-control"></div>
+ <div class="col-sm-6"><input type="text" class="form-control" placeholder="2500"></div>
 <input type="submit" value="Filtruj" class="btn btn-primary" style="width: 100%;margin: 15px 0 0 0;">
 </div>
 </form>    
@@ -58,7 +61,7 @@ Meble
  <div class="panel panel-default" id="frontend__left_menu">
  <h3 class="panel-heading">Promocje</h3>
  <form class="" style="margin: 15px;">
- <input type="submit" value="% Promocje" class="btn btn-primary" style="width: 100%;margin: 15px 0 0 0;">
+ <input type="submit" value="% Promocje" class="btn btn-primary btn-promocje" style="width: 100%;margin: 15px 0 0 0;">
 </form>    
  
 </div>
@@ -85,7 +88,6 @@ Meble
 <div class="panel panel-default product__panel">
 <a href="{{$item->url}}">
 
-<span class="product__shop">{{$item->brand}}</span>
 <div class="product__image">
    
    <div class="product__image--inner">  
@@ -96,6 +98,8 @@ Meble
 <img src="img/gui/loader.gif" data-src="{{ $item->imgs->img[0] }}" alt="{{ $item->name }}" />
    </div>   
    </div>
+<span class="product__shop"><i aria-hidden="true" class="fa fa-user-o"></i>{{$item->brand}}</span>
+
 <span class="product__name">{{ $item->name }}</span>
 @if(($item->IsPromoted) == '1')
 <span class="product__price--old">{{ $item->oldprice }} zł</span>

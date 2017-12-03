@@ -18,8 +18,8 @@ Promocje
 <img src="{{ URL::asset('img/shops/logo/300x300-'.$promotion->user->shop->logo_sklepu) }}" alt="{{$promotion->nazwa_promocji}}" />
  </div>
  
-<div class="page-header">
-<h4>{{$promotion->nazwa_promocji}}</h4>
+<div class="page-header promocja__content--h">
+<h4 class="promocja__nazwa">{{$promotion->nazwa_promocji}}</h4>
 <span class="promocja_dyskont">-{{$promotion->wartosc_promocji}}%</span>
 </div>
 <div class="panel-body">

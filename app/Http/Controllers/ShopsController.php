@@ -135,7 +135,60 @@ $shop = new Shop(
            
                      $image_oryginal = public_path()."/img/shops/logo/".$logoName;
            
-                     $img_min= Image::make($image_oryginal)->resize(300, 300);
+$img = Image::make($image_oryginal);
+
+                     $width  = $img->width();
+                     $height = $img->height();
+                 
+                 
+                     /*
+                      *  kadrowanie obrazka do 300x300
+                      */
+                     $dimension = 2362;
+                 
+                     $vertical   = (($width < $height) ? true : false);
+                     $horizontal = (($width > $height) ? true : false);
+                     $square     = (($width = $height) ? true : false);
+                 
+                 
+                     if ($vertical) {
+                         $top = $bottom = 245;
+                         $newHeight = ($dimension) - ($bottom + $top);
+                         $img_min= $img->resize(null, $newHeight, function ($constraint) {
+                             $constraint->aspectRatio();
+                         });
+                 
+                     } else if ($horizontal) {
+                         $right = $left = 245;
+                         $newWidth = ($dimension) - ($right + $left);
+                         $img_min= $img->resize($newWidth, null, function ($constraint) {
+                             $constraint->aspectRatio();
+                         });
+                 
+                     } else if ($square) {
+                         $right = $left = 245;
+                         $newWidth = ($dimension) - ($left + $right);
+                         $img_min= $img->resize($newWidth, null, function ($constraint) {
+                             $constraint->aspectRatio();
+                         });
+                 
+                     }
+                 
+                     $img_min= $img->resizeCanvas($dimension, $dimension, 'center', false, '#ffffff');
+                     //$img->save(public_path("storage/{$token}/{$origFilename}"));
+
+                     //---
+                     // $img_min= Image::make($image_oryginal)->resize(300, null);
+
+                    //  $img_min= Image::make($image_oryginal)->resize(300, null, function ($constraint) {
+                    //     $constraint->aspectRatio();
+                    // });
+
+
+
+                    // ---
+
+
                      $img_min->save(public_path()."/img/shops/logo/300x300-".$logoName);
                 
            
