@@ -31,7 +31,11 @@ class ShopsController extends Controller
     */
     public function index() { 
         $shops = Shop::latest()->get();
-        return view('shops.index')->with("shops",$shops);
+
+        $menu_top  = DB::table('categories')->where('status_kategorii','1')->get();   //
+       
+        
+        return view('shops.index')->with("shops",$shops)->with('categories', $menu_top);
     }
 
     /*

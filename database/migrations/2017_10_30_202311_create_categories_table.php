@@ -17,6 +17,11 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nazwa_kategorii',255);
+            $table->integer('glowna')->default(0);
+            $table->integer('status_kategorii')->default(0);
+            
+            $table->string('id_glownej_kategorii',16);
+            $table->string('tag_kategorii',64);
             $table->timestamps();
         });
     }

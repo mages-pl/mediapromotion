@@ -3,7 +3,7 @@
 @section('content')
  
 <div class="col-sm-12">
-<div class="category_image" style="margin-bottom:20px;background-image:url({{ asset('img/category/shop.jpg') }});background-size:cover;background-position:center;width:100%;height:400px;display:block;">
+<div class="category_image" style="margin-bottom:20px;background-image:url({{ asset('img/category/shop.jpg') }});background-size:cover;background-position:center;width:100%;height:250px;display:block;">
 <h1 class="page-header section">
 Sklepy
 </h1>
@@ -14,7 +14,7 @@ Sklepy
 
 <div class="clearfix"></div>
 @foreach($shops as $shop)
-<div class="col-sm-12 col-md-6 col-lg-4">
+<div class="col-sm-12 col-md-6 col-lg-3">
 <div class="panel panel-default">
 <div class="panel-body text-center">
 

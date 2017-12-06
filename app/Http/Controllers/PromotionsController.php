@@ -27,7 +27,11 @@ class PromotionsController extends Controller
     }
 public function index() {
     $promotions = Promotion::latest()->get();
-         return view('promotions.index')->with("promotions",$promotions);
+
+    $menu_top  = DB::table('categories')->where('status_kategorii','1')->get();   //
+    
+    
+         return view('promotions.index')->with("promotions",$promotions)->with('categories', $menu_top);
 // return $promotions;
 }    
 public function show() {

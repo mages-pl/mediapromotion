@@ -26,11 +26,16 @@ class CreateProductTable extends Migration
             $table->string('obrazek_produktu',255)->nullable();
             $table->string('kategoria_produktu',255)->nullable();
             $table->string('url_produktu',255)->nullable();
-            $table->string('cena_produktu',32)->nullable();
+            $table->float('cena_produktu')->unsigned()->nullable();
+            $table->float('stara_cena_produktu')->unsigned()->nullable();
+            $table->integer('ilosc_produktu')->default(0);
 
-            $table->string('promocja_produktu',1)->nullable();
-            $table->string('wartosc_promocji_produktu',3)->nullable();
+            $table->integer('promocja_produktu')->unsigned()->default(0);
+            $table->integer('wartosc_promocji_produktu')->unsigned()->default(0);
             
+            $table->integer("aktywny")->unsigned()->default(0);
+
+            $table->integer('id_brand')->unsigned()->nullable();
 
             $table->timestamps();
 

@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Product;
 
+use App\Category;
+
+use Illuminate\Support\Facades\DB;
+
 class HomeController extends Controller
 {
     /**
@@ -28,7 +32,13 @@ class HomeController extends Controller
     public function index()
     {
         $last_products = Product::latest()->limit(4)->get();
-        return view('home')->with('last_products',$last_products);
+       
+        $menu_top  = DB::table('categories')->where('status_kategorii','1')->get();   //
+        
+        
+        return view('home')->with('last_products',$last_products)->with('categories', $menu_top);
+        
         //return "dfdsf";
     }
+     
 }

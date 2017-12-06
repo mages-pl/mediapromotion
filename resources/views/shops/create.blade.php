@@ -2,7 +2,8 @@
 {{--  @extends('pages')  --}}
 @section('content')
  @include('admin_menu')
-<div class="panel panel-default col-md-8">
+ <div class="col-sm-10">
+<div class="panel panel-default">
   
 <h1 class="panel-heading">
 Dodawanie sklepu
@@ -23,5 +24,5 @@ Dodawanie sklepu
 {!! Form::close() !!}
  
 </div>
- 
+ </div>
 @stop

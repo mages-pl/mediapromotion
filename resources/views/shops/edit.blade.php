@@ -1,7 +1,8 @@
 @extends('admin_pages')
 @section('content')
  @include('admin_menu')
-<div class="panel panel-default col-md-8">
+ <div class="col-sm-10">
+<div class="panel panel-default">
  
  <div class="panel-heading">
 <h3>
@@ -25,5 +26,6 @@ Informacje o sklepie
 
 {!! Form::close() !!}
 </div>
+ </div>
  </div>
 @stop

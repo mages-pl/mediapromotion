@@ -21,7 +21,7 @@ class CreateInvoicesTable extends Migration
             $table->string('nr_faktury',32);
             $table->string('rodzaj_faktury',32);
             $table->date('data_wystawienia',32);
-            $table->string('status_faktury',16);
+            $table->integer('status_faktury')->unsigned()->default(0);
             $table->float('wartosc_faktury',64);
             $table->float('stawka_vat',16);
               

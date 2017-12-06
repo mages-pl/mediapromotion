@@ -22,20 +22,7 @@
             <div class="container-full">
             <div class="admin_menu_top">
             <div class="col-sm-2">
-                <div class="navbar-header">
-
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Toggle Navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
- 
                 
-                    <a href="/" class="navbar-brand"><img src="{{ URL::asset('img/brand.png') }}" alt="" /></a>
-               
-                </div>
                 </div>
  
  <div class="col-sm-10">

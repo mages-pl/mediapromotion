@@ -39,8 +39,10 @@ $xml_array = [];
        array_push($xml_array,simplexml_load_file($xml->xml_sklepu,'SimpleXMLElement',LIBXML_NOCDATA));
  
     }
+    $menu_top  = DB::table('categories')->where('status_kategorii','1')->get();   //
+    
    
-        return view('products.index')->with("products",$products)->with("responsedata",$xml_array); // check_xml
+        return view('products.index')->with("products",$products)->with("responsedata",$xml_array)->with("categories",$menu_top); // check_xml
     }
 
     public function productslist() { 
@@ -48,7 +50,8 @@ $products = DB::table('products')->where("user_id",Auth::User()->id)->latest()->
 
 $qty_items = DB::table('products')->where("user_id",Auth::User()->id)->count();
 
-         
-        return view('products.productlist')->with("products",$products)->with("qty",$qty_items);
+$menu_top  = DB::table('categories')->where('status_kategorii','1')->get();   //
+
+        return view('products.productlist')->with("products",$products)->with("qty",$qty_items)->with('categories', $menu_top);
     }
  }

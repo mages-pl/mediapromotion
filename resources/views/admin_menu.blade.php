@@ -1,4 +1,18 @@
-<div class="col-md-4">
+<div class="col-sm-2" id="menu_left_admin">
+<div class="navbar-header">
+
+                    <!-- Collapsed Hamburger -->
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+ 
+                
+                    <a href="/" class="navbar-brand"><img src="{{ URL::asset('img/brand.png') }}" alt="" /></a>
+               
+                </div>
 <div class="list-group">
 <a href="/shops/{{Auth::user()->id}}/edit" class="list-group-item">
 <i class="fa fa-tachometer" aria-hidden="true"></i>

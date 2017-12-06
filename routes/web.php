@@ -50,8 +50,9 @@ Route::resource("promotions","PromotionsController");
 Route::resource("settings","SettingsController",array('before' => 'restrictPermission'));
 Route::resource("products","ProductsController");
 Route::resource("invoices","InvoicesController");
+Route::resource("brands","BrandsController");
+Route::resource("menu","TopMenusController");
 
- 
  
 
 Route::get('products-list','ProductsController@productslist');
@@ -62,6 +63,7 @@ Route::get('invoices-download',"InvoicesController@download");
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+//Route::get('/', 'TopMenusController@index');
 
 });
 

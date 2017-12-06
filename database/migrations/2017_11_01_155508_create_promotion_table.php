@@ -27,6 +27,7 @@ $table->string('nazwa_promocji');
 $table->text('opis_promocji');
 $table->float('wartosc_promocji');
 $table->string('kod_promocji');
+$table->integer("status_promocji")->default(0);
 $table->date('promocja_od');
 $table->date('promocja_do');
 
