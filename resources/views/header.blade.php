@@ -46,15 +46,7 @@
                
                 </div>
                 </div>
-{{--  
-                <form class="navbar-form" role="search">
-        <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search" name="q">
-            <div class="input-group-btn">
-                <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-            </div>
-        </div>
-        </form>  --}}
+ 
  <div class="col-sm-10">
  <div class="col-sm-8"> 
  <div class="wyszukiwarka">
@@ -141,7 +133,9 @@ Stwórz konto</a></li>
                     </ul>  --}}
 {{--  {{$categories}}  --}}
 <ul class="nav navbar-nav menu-poziome">
-{{--  @foreach($categories as $c)
+{{--  fgfg: {{ $categories }}  --}}
+{{--  {{$categories}}  --}}
+@foreach($categories as $c)
 @if(($c->glowna) == 1)
 <li><a href="#{{$c->id}},{{$c->tag_kategorii}}" class="parent-category">{{$c->nazwa_kategorii}}</a>
 <ul class="submenu">
@@ -150,7 +144,8 @@ Stwórz konto</a></li>
 </ul>
 </li>
 @endif
-@endforeach        --}}
+@endforeach      
+
 <li><a href="/promotions">Promocje</a></li>
 <li><a href="/shops">Sklepy</a></li>
 <li><a href="/brands">Marki</a></li>

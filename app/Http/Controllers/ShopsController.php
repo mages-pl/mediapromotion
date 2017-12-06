@@ -23,19 +23,19 @@ use Illuminate\Support\Facades\DB;
 
 class ShopsController extends Controller
 {
-    public function __construct() {
-        $this->middleware('auth',['except'=>['index','show']]);
-    }
+    // public function __construct() {
+    //     $this->middleware('auth',['except'=>['index','show']]);
+    // }
     /*
     Lista sklepów
     */
     public function index() { 
         $shops = Shop::latest()->get();
 
-        $menu_top  = DB::table('categories')->where('status_kategorii','1')->get();   //
+       // $menu_top  = DB::table('categories')->where('status_kategorii','1')->get();   //
        
         
-        return view('shops.index')->with("shops",$shops)->with('categories', $menu_top);
+        return view('shops.index')->with("shops",$shops);//->with('categories', $menu_top);
     }
 
     /*

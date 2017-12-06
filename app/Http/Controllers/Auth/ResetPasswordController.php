@@ -5,6 +5,12 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\ResetsPasswords;
 
+use Illuminate\Support\Facades\DB;
+
+use Category;
+
+use View;
+
 class ResetPasswordController extends Controller
 {
     /*
@@ -35,5 +41,8 @@ class ResetPasswordController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $category = DB::table('categories')->where('status_kategorii','1')->get();
+        
+           View::share('categories', $category);
     }
 }

@@ -12,17 +12,7 @@ use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    
-    // public function __construct()
-    // {
-    //    $this->middleware('auth',['excerpt'=>'index']);
-    // }
-
+  
     /**
      * Show the application dashboard.
      *
@@ -33,10 +23,10 @@ class HomeController extends Controller
     {
         $last_products = Product::latest()->limit(4)->get();
        
-        $menu_top  = DB::table('categories')->where('status_kategorii','1')->get();   //
+      //  $menu_top  = DB::table('categories')->where('status_kategorii','1')->get();   //
         
         
-        return view('home')->with('last_products',$last_products)->with('categories', $menu_top);
+        return view('home')->with('last_products',$last_products);
         
         //return "dfdsf";
     }

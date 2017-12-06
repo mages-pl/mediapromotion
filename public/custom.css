@@ -194,6 +194,12 @@ margin: 5px 0;
     }
     .title__site.home {
         text-align: center;
+        display: block;
+        width: 33%;
+        margin: 25px auto;
+        background: #fff;
+        border-radius: 5px;
+        padding: 10px;
     }
     .title__site {
         font-weight: 300;
@@ -364,4 +370,9 @@ border:0px;
  }
  a.list-group-item {
      color: #fff;
+ }
+ @media(min-width:1366px) {
+     .container {
+width: 1280px !important;
+     }
  }

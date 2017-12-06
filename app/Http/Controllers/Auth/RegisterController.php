@@ -13,7 +13,11 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 
 use Auth;
 
+use Illuminate\Support\Facades\DB;
 
+use Category;
+
+use View;
 //use Session;
 
 class RegisterController extends Controller
@@ -46,6 +50,9 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+        $category = DB::table('categories')->where('status_kategorii','1')->get();
+        
+           View::share('categories', $category);
     }
 
     /**

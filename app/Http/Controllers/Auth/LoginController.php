@@ -4,6 +4,11 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\DB;
+
+use Category;
+
+use View;
 
 class LoginController extends Controller
 {
@@ -35,5 +40,8 @@ class LoginController extends Controller
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+        $category = DB::table('categories')->where('status_kategorii','1')->get();
+        
+           View::share('categories', $category);
     }
 }

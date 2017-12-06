@@ -17,12 +17,12 @@ class PagesController extends Controller
         
     }
     public function kontakt() {
-        $menu_top  = DB::table('categories')->where('status_kategorii','1')->get();   //
+        //$menu_top  = DB::table('categories')->where('status_kategorii','1')->get();   //
         
         $tytul = "Skontaktuj się";
         $email = "michal.jendraszczy@gmail.com";
         $tel = "123123123";
-        return view("pages.kontakt",compact('tytul','email','tel'))->with('categories',$menu_top);
+        return view("pages.kontakt",compact('tytul','email','tel'));
     }
  
 }

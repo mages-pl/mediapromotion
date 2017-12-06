@@ -16,23 +16,23 @@ use Session;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Pagination\Paginator;
-
+ 
 use Illuminate\Pagination\LengthAwarePaginator;
 
 class PromotionsController extends Controller
 {
     //
-    public function __construct() {
-        $this->middleware('auth',['except'=>['index','show']]);
-    }
+    // public function __construct() {
+    //     $this->middleware('auth',['except'=>['index','show']]);
+    // }
+
 public function index() {
     $promotions = Promotion::latest()->get();
 
-    $menu_top  = DB::table('categories')->where('status_kategorii','1')->get();   //
+    //$menu_top  = DB::table('categories')->where('status_kategorii','1')->get();   //
     
     
-         return view('promotions.index')->with("promotions",$promotions)->with('categories', $menu_top);
-// return $promotions;
+         return view('promotions.index', compact("promotions"));//->with('categories', $menu_top);
 }    
 public function show() {
 return "show";

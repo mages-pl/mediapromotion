@@ -51,7 +51,7 @@ Route::resource("settings","SettingsController",array('before' => 'restrictPermi
 Route::resource("products","ProductsController");
 Route::resource("invoices","InvoicesController");
 Route::resource("brands","BrandsController");
-Route::resource("menu","TopMenusController");
+//Route::resource("menu","TopMenusController");
 
  
 
