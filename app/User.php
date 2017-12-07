@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password','rola_uzytkownika'
     ];
 
     /**
@@ -28,23 +28,29 @@ class User extends Authenticatable
     ];
 
     /*
-Użytkownik posiada sklep
+Użytkownik posiada jeden sklep
     */
     public function shop() {   // wczesniej sklepy
         return $this->hasOne("App\Shop");
     }
 
-    /* Użytkownik posiada ustawienia */
+    /* Użytkownik posiada jedno ustawienia */
     public function setting() { 
         return $this->hasOne("App\Setting");
     }
 
-  /* Sklep posiada promocje */
+  /* Uzytkwonik ma wiele promocji */
      public function promocje() { 
         return $this->hasMany("App\Promotion");
     }
+
+    // Uzytkownik ma wiele faktur
     public function faktury() {
         return $this->hasMany("App\Invoice");
     }
-    
+
+    // Uzytkownik ma jedna role
+    public function roles() {
+        return $this->belongsTo("App\Role");
+    }
 }

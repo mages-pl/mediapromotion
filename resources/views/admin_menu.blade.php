@@ -14,6 +14,7 @@
                
                 </div>
 <div class="list-group">
+@if(Auth::user()->role_id == 1)
 <a href="/shops/{{Auth::user()->id}}/edit" class="list-group-item">
 <i class="fa fa-tachometer" aria-hidden="true"></i>
 Pulpit</a>
@@ -29,5 +30,25 @@ Statystyki</a>
 <a href="/invoices"  class="list-group-item"><i class="fa fa-credit-card" aria-hidden="true"></i>
 Faktury</a>
  <a href="/settings/{{Auth::user()->id}}/edit" class="list-group-item"><i class="fa fa-cog" aria-hidden="true"></i>
-Ustawienia</a></div>
+Ustawienia</a>
+@endif
+@if(Auth::user()->role_id == 3)
+ <a href="/settings/{{Auth::user()->id}}/edit" class="list-group-item"><i class="fa fa-cog" aria-hidden="true"></i>
+Zarzadzaj sklepami</a>
+ <a href="/settings/{{Auth::user()->id}}/edit" class="list-group-item">
+<i class="fa fa-tags" aria-hidden="true"></i>
+Zarzadzaj promocjami</a>
+ <a href="/settings/{{Auth::user()->id}}/edit" class="list-group-item">
+<i class="fa fa-retweet" aria-hidden="true"></i>
+Integracje</a>
+ <a href="/settings/{{Auth::user()->id}}/edit" class="list-group-item">
+<i class="fa fa-users" aria-hidden="true"></i>
+Zarzadzaj uzytkownikami</a>
+<a href="/settings/{{Auth::user()->id}}/edit" class="list-group-item">
+<i class="fa fa-credit-card-alt" aria-hidden="true"></i>
+Płatnosci</a>
+@endif
+
+
+</div>
 </div>

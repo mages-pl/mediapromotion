@@ -45,7 +45,20 @@
 Stwórz konto</a></li>
                         @else
                        <li>
-                       <span class="btn btn-default saldo">0,00 PLN</span>
+                      
+                       <span class="btn btn-default saldo">
+                        @if(Auth::user()->role_id == 1)
+                       0,00 PLN
+                       @endif
+                        @if(Auth::user()->role_id == 2)
+                       Moderator
+                       @endif
+                        @if(Auth::user()->role_id == 3)
+                      Admin
+                       @endif
+                       
+                       </span>
+                       
                        </li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
