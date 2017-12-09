@@ -1,7 +1,7 @@
 
 <footer>
 <div class="container">
-copyright &copy; MediaPromotion (Backend)
+copyright &copy; MediaPromotion v0.1 BETA
 </div>
 </footer>
 

@@ -33,12 +33,15 @@ Czas promocji
 Status
 </th>
  <th>
+ Sklep
+ </th>
+ <th>
  Akcja
  </th>
  </tr>
 </thead>
 <tbody>
-@foreach($promotions as $promotion)
+@foreach($promotionsall as $promotion)
 <tr>
 <td>
 {{ $promotion->nazwa_promocji }}
@@ -55,6 +58,9 @@ Aktywna
 @else
 Nieaktywna
 @endif
+</td>
+<td>
+{{$promotion->user_id}}
 </td>
  <td>
 
@@ -75,7 +81,7 @@ Nieaktywna
 
 </tbody>
 </table>
- {{ $promotions->links() }} 
+ {{ $promotionsall->links() }} 
 </div>
  
 @endsection

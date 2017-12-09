@@ -51,12 +51,23 @@ Route::resource("settings","SettingsController",array('before' => 'restrictPermi
 Route::resource("products","ProductsController");
 Route::resource("invoices","InvoicesController");
 Route::resource("brands","BrandsController");
+Route::resource("categories","CategoriesController");
+Route::resource("sliders","SlidersController");
 //Route::resource("menu","TopMenusController");
 
- 
 
+Route::resource('integrates','IntegratesController');
+
+Route::get('customersmanage','SettingsController@customersmanage');
+Route::get('productsmanage','ProductsController@productsmanage');
+Route::get('shopsmanage','ShopsController@shopsmanage');
+Route::get('promotionsmanage','PromotionsController@promotionsmanage');
+Route::get('usersmanage','UsersController@usersmanage');
+Route::get('invoicesmanage','InvoicesController@invoicesmanage');
+Route::get('categorieslist','CategoriesController@categorieslist');
 Route::get('products-list','ProductsController@productslist');
 Route::get('promotions-list','PromotionsController@promotionslist');
+
 
 Route::get('invoices-download',"InvoicesController@download");
 

@@ -18,6 +18,8 @@ use Dompdf\Dompdf;
 
 use Auth;
 
+use App\User;
+
 use Session;
 
 class InvoicesController extends Controller
@@ -34,7 +36,7 @@ class InvoicesController extends Controller
 
 public function index() { 
 
-    $invoices = DB::table('invoices')->where("user_id",Auth::User()->id)->latest()->paginate(4);
+    $invoices = DB::table('invoices')->where("user_id",Auth::User()->id)->latest()->paginate(10);
    
 //if(count($invoices) == 0) :
 //    return view("invoices.index")->with("invoices","dfgfdg");
@@ -90,5 +92,13 @@ $dompdf->stream();
 
     //return "download.pdf";
 }
+public function invoicesmanage() {
+    $invoices = DB::table('invoices')->latest()->paginate(10);
 
+
+    
+   // $customers = User::find($invoices->user_id)->id;
+    
+    return view('invoices.invoicesmanage')->with('invoices',$invoices);//->with('username',$customers);
+}
 }

@@ -7,6 +7,9 @@ use App\Setting;
 use Request;
 use App\Http\Requests\CreateSettingRequest;
 
+use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 
 class SettingsController extends Controller
 {
@@ -55,6 +58,12 @@ $setting = new Setting($request->all());
   
 return redirect("settings/".$setting->user_id."/edit");
  
+}
+
+public function customersmanage() { 
+
+  $customermanage = DB::table('settings')->latest()->paginate(10);
+  return view('settings.customersmanage')->with('customersmanage',$customermanage);
 }
 
 }

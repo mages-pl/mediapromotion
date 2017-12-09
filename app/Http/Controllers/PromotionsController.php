@@ -53,7 +53,7 @@ public function edit($id) {
 
     $promotion = Promotion::findOrFail($id);
 
-    if(Auth::user()->id == $promotion->user_id) { 
+    if((Auth::user()->id == $promotion->user_id) || (Auth::user()->role_id == 3)) { 
         
        return view("promotions.edit")->with("edit_promotion",$promotion);
        } else {
@@ -83,7 +83,11 @@ $promotion = new Promotion($request->all());
 return redirect("/promotions-list");
 //return "store";
 }    
+public function promotionsmanage() {
+    $promotionsall = DB::table('promotions')->latest()->paginate(10);
 
+    return view('promotions.promotionsmanage')->with('promotionsall',$promotionsall);
+}
 public function destroy($id)  {
     
     $delete_promotion = Promotion::find($id);

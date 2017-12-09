@@ -1,10 +1,7 @@
 @extends('admin_pages')
 {{--  @extends('pages')  --}}
 @section('content')
- @include('admin_menu')
- <div class="col-sm-10">
-<div class="panel panel-default">
-  
+ 
  <div class="panel-heading">
 <h3>
 Nowa promocja
@@ -26,6 +23,5 @@ Nowa promocja
 
 {!! Form::close() !!}
  
-</div>
- </div>
+ 
 @stop

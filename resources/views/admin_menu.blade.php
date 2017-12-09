@@ -33,20 +33,41 @@ Faktury</a>
 Ustawienia</a>
 @endif
 @if(Auth::user()->role_id == 3)
- <a href="/settings/{{Auth::user()->id}}/edit" class="list-group-item"><i class="fa fa-cog" aria-hidden="true"></i>
+ <a href="/shopsmanage" class="list-group-item"><i class="fa fa-cog" aria-hidden="true"></i>
 Zarzadzaj sklepami</a>
- <a href="/settings/{{Auth::user()->id}}/edit" class="list-group-item">
+ <a href="/promotionsmanage" class="list-group-item">
 <i class="fa fa-tags" aria-hidden="true"></i>
 Zarzadzaj promocjami</a>
- <a href="/settings/{{Auth::user()->id}}/edit" class="list-group-item">
+
+ <a href="/sliders" class="list-group-item">
+<i class="fa fa-picture-o" aria-hidden="true"></i>
+
+Bannery</a>
+
+ <a href="/integrates" class="list-group-item">
 <i class="fa fa-retweet" aria-hidden="true"></i>
 Integracje</a>
- <a href="/settings/{{Auth::user()->id}}/edit" class="list-group-item">
+
+ <a href="/productsmanage" class="list-group-item">
+<i class="fa fa-retweet" aria-hidden="true"></i>
+Zarzadzaj produktami</a>
+
+ 
+ <a href="/customersmanage" class="list-group-item">
+<i class="fa fa-suitcase" aria-hidden="true"></i>
+
+Zarzadzaj kontrahentami</a>
+
+
+<a href="/categorieslist" class="list-group-item">
+<i class="fa fa-book" aria-hidden="true"></i>
+Kategorie</a>
+ <a href="/usersmanage" class="list-group-item">
 <i class="fa fa-users" aria-hidden="true"></i>
 Zarzadzaj uzytkownikami</a>
-<a href="/settings/{{Auth::user()->id}}/edit" class="list-group-item">
+<a href="/invoicesmanage" class="list-group-item">
 <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
-Płatnosci</a>
+Zarządzanie płatnosciami</a>
 @endif
 
 

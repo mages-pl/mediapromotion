@@ -102,6 +102,9 @@ footer {
     padding: 25px 0;
     position: relative;
     bottom:0px;
+
+    text-align: right;
+    
     width: 100%;
 }
 .promocja__content--h {
@@ -242,6 +245,7 @@ margin: 5px 0;
  #admin-page {
 display: table;
 width: 100%;
+margin-top: -50px;
 margin-left: -15px;
 } 
 .product__panel a, .product__panel a:hover {
@@ -375,4 +379,10 @@ border:0px;
      .container {
 width: 1280px !important;
      }
+ }
+ .slider_min {
+     /* width:250px; */
+ }
+ .slider_tab {
+width:275px;
  }

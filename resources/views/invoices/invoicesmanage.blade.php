@@ -2,31 +2,20 @@
 
 
 @section('content')
-
+@if(Auth::user()->role_id == 3)
  <div class="panel-heading">
 <h3>
 Faktury
 </h3>
  </div>
  <div class="panel-body">
- <div class="panel panel-default">
-   <div class="panel-heading">
-    Dodaj nową fakturę
-    </div>
-    <div class="panel-body">
-   {{ Form::open(['url'=>'invoices', 'class'=>'form-inline']) }}
-
-{{ Form::text('wartosc_faktury',null,['class'=>'form-control'])}}
-{{ Form::submit('Wygeneruj fakturę pforoma',['class'=>'btn btn-success'])}}
-
-
-   {{ Form::close() }}
-
-</div>
-</div>
+ 
 @if(count($invoices) > 0) 
 <table class="table table-striped">
 <thead>
+<th>
+Klient
+</th>  
 <th>
 Numer faktury
 </th>  
@@ -49,6 +38,9 @@ Status
 
 @foreach($invoices as $invoice)
 <tr>
+<td>
+<a href="/invoices-download">{{ $invoice->user_id }}</a>
+</td>
 <td>
 <a href="/invoices-download">{{ $invoice->nr_faktury }}</a>
 </td>
@@ -84,5 +76,9 @@ Nie znaleziono faktur
 </div>
 @endif
 </div>
-
+@else
+<div class="panel-heading">
+<div class="alert alert-danger">Brak uprawnien</div>
+</div>
+@endif
 @endsection

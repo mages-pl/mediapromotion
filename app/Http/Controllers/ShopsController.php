@@ -16,6 +16,12 @@ use Image;
 
 use App\Product;
 
+ 
+
+use Illuminate\Pagination\Paginator;
+ 
+use Illuminate\Pagination\LengthAwarePaginator;
+
 use Intervention\Image\ImageManager;
 
 
@@ -74,6 +80,11 @@ $shop = new Shop(
     return redirect("shops/".$shop->id."/edit")->with("message","test");
     }
 
+public function shopsmanage() {
+$shopsmanage = DB::table('shops')->latest()->paginate(10);
+
+return view('shops.shopsmanage')->with("shopsmanage",$shopsmanage);
+}
     public function edit($id) {
 
         $edycja_sklepu  = Shop::findOrFail($id);

@@ -29,10 +29,13 @@ Stan
 <th>
 Cena
 </th>
+<th>
+Sklep
+</th>
  </tr>
 </thead>
 <tbody>
-@foreach($products as $product)
+@foreach($productsmanage as $product)
 <tr>
 <td>{{ $product->sku_produktu }}</td>
 <td><img src="{{ $product->obrazek_produktu }}" alt="miniatura" width="120" class="thumbnail"/></td>
@@ -41,13 +44,16 @@ Cena
 <td>rtre</td>
 <td>{{ number_format($product->cena_produktu,2) }}</td>
 
+<td>
+{{$product->user_id}}
+</td>
 </tr>
 
 @endforeach
 
 </tbody>
 </table>
-{{ $products->links() }}
+{{ $productsmanage->links() }}
 </div>
 
 @endsection

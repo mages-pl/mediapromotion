@@ -48,7 +48,8 @@ Stwórz konto</a></li>
                       
                        <span class="btn btn-default saldo">
                         @if(Auth::user()->role_id == 1)
-                       0,00 PLN
+                       {{--  0,00 PLN  --}}
+FREE
                        @endif
                         @if(Auth::user()->role_id == 2)
                        Moderator

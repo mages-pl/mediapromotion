@@ -12,6 +12,7 @@ protected $fillable = [
 'wartosc_faktury'
 ];
 
+
     public function user() { 
 return $this->belongsTo('App\User');
 
