@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Product;
 
 use App\Category;
+use App\Slider;
 
 use Illuminate\Support\Facades\DB;
 
@@ -25,8 +26,9 @@ class HomeController extends Controller
        
       //  $menu_top  = DB::table('categories')->where('status_kategorii','1')->get();   //
         
+      $sliders = DB::table('sliders')->where('status_slidera',1)->get();
         
-        return view('home')->with('last_products',$last_products);
+        return view('home')->with('last_products',$last_products)->with('sliders',$sliders);
         
         //return "dfdsf";
     }

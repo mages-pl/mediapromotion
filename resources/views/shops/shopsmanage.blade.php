@@ -43,7 +43,7 @@ Wlasciciel
 <td>{{ $shop->link_sklepu }}   </td>
  <td>{{ $shop->saldo_sklepu }}   </td>
 <td>
-{{$shop->user_id}}
+{{$shop->user->name}}
 </td>
  <td>
 

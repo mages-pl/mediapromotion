@@ -16,6 +16,8 @@ use Image;
 
 use App\Product;
 
+use User;
+
  
 
 use Illuminate\Pagination\Paginator;
@@ -69,7 +71,7 @@ $shop = new Shop(
 );
 
 
-   Auth::user()->sklepy()->save($shop);
+   Auth::user()->shop()->save($shop);
 
 // $logoName = $shop->id.'logo.'.$request->file('logo_sklepu')->getClientOriginalExtension();
 

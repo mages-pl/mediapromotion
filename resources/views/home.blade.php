@@ -15,17 +15,16 @@
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
-    <div class="item active">
-      <img src="/img/slider/1.jpg" alt="Los Angeles">
+  @foreach($sliders as $slider) 
+  @if($sliders->first() == $slider) 
+ <div class="item active">
+ @else 
+ <div class="item">
+  @endif
+      <img src="{{$slider->obrazek_slidera}}" alt="{{$slider->nazwa_slidera}}">
     </div>
+  @endforeach
 
-    <div class="item">
-      <img src="/img/slider/2.jpg" alt="Chicago">
-    </div>
-
-    <div class="item">
-      <img src="/img/slider/3.jpg" alt="New York">
-    </div>
   </div>
 
   <!-- Left and right controls -->

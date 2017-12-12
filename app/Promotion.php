@@ -18,10 +18,10 @@ class Promotion extends Model
     ];
 
 /*
-Promocje posiada sklep (user)
+User posiada promocje
 */
     public function user() { 
-        return $this->belongsTo("App\User");
+        return $this->hasMany("App\User");
     }
  
 /*Promocje posiadają typ promocji */

@@ -19,7 +19,7 @@ Bannery
 @include('settings.form',["ButtonSave"=>"Zapisz"])
  
    --}}
-   <a href="/slides/create" class="col-sm-12 btn btn-success">Dodaj nowy slider</a>
+   <a href="/sliders/create" class="col-sm-12 btn btn-success">Dodaj nowy slider</a>
    <table class="table table-striped">
 <thead>
 <th>

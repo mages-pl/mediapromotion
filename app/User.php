@@ -26,11 +26,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+public function slider() { 
 
+    return $this->hasMany("App\Slider");
+}
     /*
 Użytkownik posiada jeden sklep
     */
-    public function shop() {   // wczesniej sklepy
+    public function shop() {   
         return $this->hasOne("App\Shop");
     }
 
@@ -40,17 +43,17 @@ Użytkownik posiada jeden sklep
     }
 
   /* Uzytkwonik ma wiele promocji */
-     public function promocje() { 
+     public function promotion() { 
         return $this->hasMany("App\Promotion");
     }
 
     // Uzytkownik ma wiele faktur
-    public function faktury() {
+    public function invoice() {
         return $this->hasMany("App\Invoice");
     }
 
     // Uzytkownik ma jedna role
-    public function roles() {
+    public function role() {
         return $this->belongsTo("App\Role");
     }
 }
