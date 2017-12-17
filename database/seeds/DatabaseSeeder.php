@@ -543,6 +543,11 @@ DB::table('categories')->insert([
                 ]
                         );
                 
-
-    }
+                        DB::table('settings')->insert(
+                            [
+                        'user_id' => 1
+                        ]);
+    
+                    }
+    
 }

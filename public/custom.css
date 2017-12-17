@@ -380,9 +380,33 @@ border:0px;
 width: 1280px !important;
      }
  }
- .slider_min {
-     /* width:250px; */
- }
+  
  .slider_tab {
 width:275px;
  }
+ 
+ #frontend-navbar:before {
+    content: " ";
+    display: table;
+    background: #222222;
+    width: 50%;
+    height: 92px;
+    position: absolute;
+    z-index: 1;
+} 
+#frontend-navbar .container { 
+    position: relative;
+    z-index: 123;
+    padding: 0;
+    background: #fff;
+}
+.qty_item {
+     background: #e85541;
+    color: #fff;
+    padding: 3px 6px;
+    border-radius: 15px;
+    float: right;
+    margin-top: -53px;
+    margin-right: 15px;
+
+}

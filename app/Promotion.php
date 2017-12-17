@@ -20,9 +20,9 @@ class Promotion extends Model
 /*
 User posiada promocje
 */
-    public function user() { 
-        return $this->hasMany("App\User");
-    }
+     public function user() { 
+         return $this->belongsTo("App\User");
+     }
  
 /*Promocje posiadają typ promocji */
 public function promotiontype() { 

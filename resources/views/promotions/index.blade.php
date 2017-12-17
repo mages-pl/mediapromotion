@@ -9,15 +9,16 @@ Promocje
 </div>
 
 </div>
-  @foreach($promotions as $promotion)
+@foreach($promotions as $promotion)
+ 
 <div class="col-sm-12 col-md-6 col-lg-3">
 <div class="panel panel-default">
 <div class="panel-body text-center">
-
+  
  <div class="logo_sklep thumbnail">
-<img src="{{ URL::asset('img/shops/logo/300x300-'.$promotion->user->shop->logo_sklepu) }}" alt="{{$promotion->nazwa_promocji}}" />
+<img src="{{ URL::asset('img/shops/logo/300x300-')}}{{$promotion->user->shop->logo_sklepu}} " alt="{{$promotion->nazwa_promocji}}" />
  </div>
- 
+
 <div class="page-header promocja__content--h">
 <h4 class="promocja__nazwa">{{$promotion->nazwa_promocji}}</h4>
 <span class="promocja_dyskont">-{{$promotion->wartosc_promocji}}%</span>
@@ -27,7 +28,7 @@ Promocje
 </div>
 <div class="card-footer">
 <a href="/promotions/{{$promotion->id}}" class="btn btn-primary"><i class="fa fa-user" aria-hidden="true"></i>
-{{--  {{$promotion->user->name}}  --}}
+ 
 </a>
  <div class="clearfix"></div>
  <i class="fa fa-clock-o" aria-hidden="true"></i>
@@ -39,6 +40,7 @@ Promocja ważna do:
 
 </div>
 </div>
+ 
 @endforeach  
 
 @stop

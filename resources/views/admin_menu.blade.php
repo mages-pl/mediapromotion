@@ -34,10 +34,10 @@ Ustawienia</a>
 @endif
 @if(Auth::user()->role_id == 3)
  <a href="/shopsmanage" class="list-group-item"><i class="fa fa-cog" aria-hidden="true"></i>
-Zarzadzaj sklepami</a>
+Sklepy</a>
  <a href="/promotionsmanage" class="list-group-item">
 <i class="fa fa-tags" aria-hidden="true"></i>
-Zarzadzaj promocjami</a>
+Promocje</a>
 
  <a href="/sliders" class="list-group-item">
 <i class="fa fa-picture-o" aria-hidden="true"></i>
@@ -50,13 +50,13 @@ Integracje</a>
 
  <a href="/productsmanage" class="list-group-item">
 <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-Zarzadzaj produktami</a>
+Produkty</a>
 
  
  <a href="/customersmanage" class="list-group-item">
 <i class="fa fa-suitcase" aria-hidden="true"></i>
 
-Zarzadzaj kontrahentami</a>
+Kontrahenci</a>
 
 
 <a href="/categorieslist" class="list-group-item">
@@ -64,10 +64,10 @@ Zarzadzaj kontrahentami</a>
 Kategorie</a>
  <a href="/usersmanage" class="list-group-item">
 <i class="fa fa-users" aria-hidden="true"></i>
-Zarzadzaj uzytkownikami</a>
+Uzytkownicy</a>
 <a href="/invoicesmanage" class="list-group-item">
 <i class="fa fa-credit-card-alt" aria-hidden="true"></i>
-Zarządzanie płatnosciami</a>
+Platnosci</a>
 @endif
 
 

@@ -48,6 +48,8 @@ $xml_array = [];
     public function productslist() { 
 $products = DB::table('products')->where("user_id",Auth::User()->id)->latest()->paginate(10);
 
+//$qty_items = Product::where("user_id",Auth::User()->id)->get()->count();
+
 $qty_items = DB::table('products')->where("user_id",Auth::User()->id)->count();
 
 $menu_top  = DB::table('categories')->where('status_kategorii','1')->get();   //
@@ -57,7 +59,7 @@ $menu_top  = DB::table('categories')->where('status_kategorii','1')->get();   //
 public function productsmanage() {
     
     $productsmanage = DB::table('products')->latest()->paginate(10);
-    $qty_items = $productsmanage->count();
+    $qty_items = Product::latest()->count();
  
     return view('products.productsmanage')->with('productsmanage',$productsmanage)->with('qty',$qty_items);
 } 

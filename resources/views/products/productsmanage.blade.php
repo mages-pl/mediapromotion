@@ -8,7 +8,7 @@
 Produkty
 </h3>
  </div>
- <span>
+ <span class="qty_item">
  Produktów: {{ $qty }}
  </span>
  <div class="panel-body">
@@ -37,11 +37,12 @@ Sklep
 <tbody>
 @foreach($productsmanage as $product)
 <tr>
+{{--  id:  {{$product->id}}  --}}
 <td>{{ $product->sku_produktu }}</td>
 <td><img src="{{ $product->obrazek_produktu }}" alt="miniatura" width="120" class="thumbnail"/></td>
 
 <td>{{ $product->nazwa_produktu }}</td>
-<td>rtre</td>
+<td>{{$product->ilosc_produktu}}</td>
 <td>{{ number_format($product->cena_produktu,2) }}</td>
 
 <td>

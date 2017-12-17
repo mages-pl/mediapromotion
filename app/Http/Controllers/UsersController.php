@@ -22,13 +22,16 @@ class UsersController extends Controller
     }
     public function edit($id) {
         
+        $role_usera = Role::pluck('nazwa_roli','id');
+
         $edycja_usera = User::find($id);
 
 
-        return view('users.edit')->with('edycja_usera',$edycja_usera);
+        return view('users.edit')->with('edycja_usera',$edycja_usera)->with('role_usera',$role_usera);
     }
     public function update($id, CreateUserRequest $request)  {
 
+       // dd($request->all());
             $user = User::find($id);
 
             $user->update($request->all());

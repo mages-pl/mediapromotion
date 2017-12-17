@@ -47,7 +47,7 @@ Brak pliku XML
 @endif
 </td>
  <td>
- <a href="#" class="btn btn-default">Integracja</a>
+ <a href="/integrates/process" class="btn btn-default">Integracja</a>
  </td>
  
  

@@ -23,7 +23,7 @@
 </head>
 <body>
     <div id="app">
-      <nav class="navbar navbar-default navbar-static-top">
+      <nav id="frontend-navbar" class="navbar navbar-default navbar-static-top">
             <div class="container">
             <div class="col-sm-2">
                 <div class="navbar-header">
@@ -148,10 +148,10 @@ FREE
 {{--  {{$categories}}  --}}
 @foreach($categories as $c)
 @if(($c->glowna) == 1)
-<li><a href="#{{$c->id}},{{$c->tag_kategorii}}" class="parent-category">{{$c->nazwa_kategorii}}</a>
+<li><a href="/categories/{{$c->id}}#{{$c->tag_kategorii}}" class="parent-category">{{$c->nazwa_kategorii}}</a>
 <ul class="submenu">
 @foreach($categories as $sub) 
-@if($sub->id_glownej_kategorii == $c->id)  <li><a href="#{{$sub->id}},{{$sub->tag_kategorii}}">{{$sub->nazwa_kategorii}}</a></li> @endif  @endforeach
+@if($sub->id_glownej_kategorii == $c->id)  <li><a href="/categories/{{$sub->id}}#{{$sub->tag_kategorii}}">{{$sub->nazwa_kategorii}}</a></li> @endif  @endforeach
 </ul>
 </li>
 @endif

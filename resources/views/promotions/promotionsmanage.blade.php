@@ -60,7 +60,7 @@ Nieaktywna
 @endif
 </td>
 <td>
-{{$promotion->user_id}}
+{{$promotion->user->shop->nazwa_sklepu}}
 </td>
  <td>
 

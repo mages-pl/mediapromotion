@@ -54,6 +54,8 @@ Route::resource("brands","BrandsController");
 Route::resource("categories","CategoriesController");
 Route::resource("sliders","SlidersController");
 Route::resource('users','UsersController');
+
+Route::get('integrates/process','IntegratesController@process');
 //Route::resource("menu","TopMenusController");
 
  

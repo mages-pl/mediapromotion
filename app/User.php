@@ -15,7 +15,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','rola_uzytkownika'
+        'name', 'email', 'password','role_id', 'status_uzytkownika'
     ];
 
     /**
@@ -42,7 +42,7 @@ Użytkownik posiada jeden sklep
         return $this->hasOne("App\Setting");
     }
 
-  /* Uzytkwonik ma wiele promocji */
+  /* Promocje ma uzytkownik  */
      public function promotion() { 
         return $this->hasMany("App\Promotion");
     }

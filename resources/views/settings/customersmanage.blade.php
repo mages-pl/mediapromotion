@@ -12,11 +12,15 @@
 Nazwa firmy
 </th>
 <th>
+Uzytkownik
+</th>
+<th>
+Sklep 
+</th>
+<th>
 Telefon
 </th>  
-<th>
-Sklep
-</th>
+ 
 <th>
 Adres
 </th>
@@ -41,12 +45,18 @@ REGON
 {{$customer->nazwa_firmy}}
 </td>
 <td>
-{{ $customer->telefon_firmy }}
 
+{{$customer->user->name}}
 </td>
 
+
 <td>
-{{$customer->user_id}}
+
+{{$customer->user->shop->nazwa_sklepu}}
+</td>
+<td>
+{{ $customer->telefon_firmy }}
+
 </td>
 
 <td>{{ $customer->adres_firmy }}, {{$customer->kod_pocztowy_firmy}}   </td>

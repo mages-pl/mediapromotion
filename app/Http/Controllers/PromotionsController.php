@@ -12,6 +12,8 @@ use Auth;
 
 use Session;
 
+use App\User;
+use App\Shop;
 
 use Illuminate\Support\Facades\DB;
 
@@ -75,7 +77,7 @@ public function update($id, CreatePromotionRequest $request)  {
 public function store(CreatePromotionRequest $request) {
 
 $promotion = new Promotion($request->all());
-    Auth::user()->promotion()->save($promotion);
+    Auth::user()->promotions()->save($promotion);
    
   // Promotion::create($request->all());
     //return redirect("promocje/".$promotion->id."/edit");
@@ -84,7 +86,7 @@ return redirect("/promotions-list");
 
 }    
 public function promotionsmanage() {
-    $promotionsall = DB::table('promotions')->latest()->paginate(10);
+    $promotionsall = Promotion::latest()->paginate(10);
 
     return view('promotions.promotionsmanage')->with('promotionsall',$promotionsall);
 }

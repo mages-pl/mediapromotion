@@ -62,7 +62,7 @@ return redirect("settings/".$setting->user_id."/edit");
 
 public function customersmanage() { 
 
-  $customermanage = DB::table('settings')->latest()->paginate(10);
+  $customermanage = Setting::latest()->paginate(10);
   return view('settings.customersmanage')->with('customersmanage',$customermanage);
 }
 

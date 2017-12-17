@@ -7,8 +7,12 @@
 {{Form::label('name', 'Nazwa uzytkownika')}}
 {{Form::text('name',null,['class'=>'form-control'])}}
 
- {{Form::label('role_id', 'Rola uzytkownika')}}
-{{Form::text('role_id',null,['class'=>'form-control'])}}
+ {{--  {{Form::label('role_id', 'Rola uzytkownika')}}
+{{Form::text('role_id',null,['class'=>'form-control'])}}  --}}
+
+{{Form::label('role_id', 'Rola uzytkownika')}}
+{{Form::select('role_id', $role_usera,null,['class'=>'form-control'])}}
+
 
 
 {{Form::label('status_uzytkownika', 'Status uzytkownika')}}

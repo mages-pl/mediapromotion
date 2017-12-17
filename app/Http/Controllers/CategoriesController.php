@@ -73,7 +73,10 @@ $category->save();
 
           return view('categories.categorieslist')->with("categorieslist",$categorieslist);
       }
-
+public function show($id) {
+    $kategoria = Category::find($id);
+    return view('categories.show',compact('kategoria'));
+}
       
       public function destroy($id)  {
 $delete_cat = Category::find($id);
