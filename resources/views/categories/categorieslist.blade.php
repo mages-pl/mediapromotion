@@ -20,7 +20,7 @@ Kategorie
  
    --}}
    
-   <a href="#" class="btn col-sm-12 btn-success">Dodaj nowa kategorie</a>
+   <a href="/categories/create" class="btn col-sm-12 btn-success">Dodaj nowa kategorie</a>
    <table class="table table-striped">
 <thead>
 <th>
@@ -53,8 +53,14 @@ Akcja
 {{ $category->glowna }}
 </td>
  <td>
- <a href="#" class="btn btn-default">Edycja</a>
- <a href="#" class="btn btn-danger">Usuń</a>
+ <a href="/categories/{{$category->id}}/edit" class="btn btn-default">Edycja</a>
+ {!! Form::open(['method'=>'DELETE','class'=>'form-inline','action'=>['CategoriesController@destroy',$category->id]]) !!}
+  <button class="btn btn-danger"> 
+ 
+ <i class="fa fa-trash-o" aria-hidden="true"></i>
+ 
+</button>
+ {!! Form::close() !!}
  </td>
  
 

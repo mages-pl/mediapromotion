@@ -20,30 +20,11 @@ Meble
  <div class="panel panel-default" id="frontend__left_menu">
  <h3 class="panel-heading">Meble</h3>
  <ul class="list-group">
- {{$categories}}
-	{{--  <li class="list-group-item"><a href="#">Komody</a></li>
-	<li class="list-group-item"><a href="#">Regaly</a></li>
-	<li class="list-group-item"><a href="#">Witryny</a></li>
-	<li class="list-group-item"><a href="#">Kredensy</li>
-	<li class="list-group-item"><a href="#">Szafy</a></li>
-	<li class="list-group-item"><a href="#">Polki</a></li>
-	<li class="list-group-item"><a href="#">Stoly</a></li>
-	<li class="list-group-item"><a href="#">Krzesla</a></li>
-	<li class="list-group-item"><a href="#">Lozka</a></li>
-	<li class="list-group-item"><a href="#">Skrzynie</a></li>
-	<li class="list-group-item"><a href="#">Organizery</a></li>
-	<li class="list-group-item"><a href="#">Stoliki</a></li>
-	<li class="list-group-item"><a href="#">Biurka</a></li>
-	<li class="list-group-item"><a href="#">Toaletki</a></li>
-	<li class="list-group-item"><a href="#">Komody RTV</a></li>
-	<li class="list-group-item"><a href="#">Mebloscianki</a></li>
-	<li class="list-group-item"><a href="#">Lustra</a></li>
-	<li class="list-group-item"><a href="#">Fotele</a></li>
-	<li class="list-group-item"><a href="#">Szafki nocne</a></li>
-	<li class="list-group-item"><a href="#">Szafki</a></li>
-	<li class="list-group-item"><a href="#">Stoly i krzesla</a></li>
-	<li class="list-group-item"><a href="#">Sofy</a></li>
-	<li class="list-group-item"><a href="#">Zestawy</a></li>  --}}
+ {{--  {{$categories}}  --}}
+ @foreach($categories as $category)  
+<li class="list-group-item"><a href="#">{{$category->nazwa_kategorii}}</a>
+ @endforeach
+ 
     </ul>
     </div>
 

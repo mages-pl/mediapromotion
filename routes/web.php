@@ -53,10 +53,18 @@ Route::resource("invoices","InvoicesController");
 Route::resource("brands","BrandsController");
 Route::resource("categories","CategoriesController");
 Route::resource("sliders","SlidersController");
+Route::resource('users','UsersController');
 //Route::resource("menu","TopMenusController");
 
+ 
 
-Route::resource('integrates','IntegratesController');
+Route::get('integrates/list','IntegratesController@index');
+
+
+// Route::get('integrates',[
+// 'integrates' => 'IntegratesController@index',
+// 'as' => 'integrates.index'
+// ]);
 
 Route::get('customersmanage','SettingsController@customersmanage');
 Route::get('productsmanage','ProductsController@productsmanage');

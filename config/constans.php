@@ -3,7 +3,6 @@
 
 //$category = "gfdg";
 
-
 return [
     
         /*
@@ -18,6 +17,9 @@ return [
         */
     
         //'categories' => env('categories',$category),
+        'on' => "Wlaczone",
+        'off' => "Wylaczone"
+        
  ];    
 
 ?>

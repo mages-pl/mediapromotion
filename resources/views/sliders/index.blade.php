@@ -1,4 +1,7 @@
 @extends('admin_pages')
+@section('title')
+Slidery
+@endsection
 @section('content')
 
  <div class="panel-heading">
@@ -48,7 +51,7 @@ Akcja
    @foreach($sliders as $slider) 
 <tr>
 <td class="slider_tab">
-<img src="{{ $slider->obrazek_slidera }}" alt="" class="thumbnail slider_min" />
+<img src="img/slider/{{ $slider->obrazek_slidera }}" alt="" class="thumbnail slider_min" />
 </td>
 <td colspan="2">
  
@@ -71,8 +74,15 @@ Akcja
  
 </td>
  <td>
- <a href="#" class="btn btn-default">Edycja</a>
-  <a href="#" class="btn btn-default">Usun</a>
+ <a href="/sliders/{{$slider->id}}/edit" class="btn btn-default">Edycja</a>
+ 
+  {!! Form::open(['method'=>'DELETE','class'=>'form-inline','action'=>['SlidersController@destroy',$slider->id]]) !!}
+ <button class="btn btn-danger"> 
+ {{--  <a href="/promotions/{{$promotion->id}}/destroy" class="btn btn-default">  --}}
+ <i class="fa fa-trash-o" aria-hidden="true"></i>
+{{--  </a>  --}}
+</button>
+{!! Form::close() !!}
  </td>
  
  

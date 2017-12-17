@@ -55,13 +55,11 @@ Uprawnienia
 </td>
 <td>
  
-{{ $user->role_id }}
-@foreach($roles as $role)
-{{$roles->first()->nazwa_roli}}
- @endforeach
+   {{ $user->role->nazwa_roli }}
+   
 </td>
  <td>
- <a href="#" class="btn btn-default">Edycja</a>
+ <a href="users/{{$user->id}}/edit" class="btn btn-default">Edycja</a>
  </td>
  
  

@@ -19,9 +19,9 @@ class CreateCategoriesTable extends Migration
             $table->string('nazwa_kategorii',255);
             $table->integer('glowna')->default(0);
             $table->integer('status_kategorii')->default(0);
-            
-            $table->string('id_glownej_kategorii',16);
-            $table->string('tag_kategorii',64);
+            $table->integer('pozycja_kategorii')->unsigned()->nullable();
+            $table->integer('id_glownej_kategorii')->unsigned()->nullable();
+            $table->string('tag_kategorii',128)->nullable();
             $table->timestamps();
         });
     }

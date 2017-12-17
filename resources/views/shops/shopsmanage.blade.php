@@ -30,24 +30,26 @@ Wlasciciel
  </tr>
 </thead>
 <tbody>
-@foreach($shopsmanage as $shop)
+{{--  {{var_dump($shopsmanage)}}  --}}
+@foreach($shopsmanage as $user)
 <tr>
 <td>
-<img src="img/shops/logo/{{ $shop->logo_sklepu }}" class="thumbnail slider_min"/>
+<img src="img/shops/logo/{{ $user->shop->logo_sklepu }}" class="thumbnail slider_min"/>
 </td>
 <td>
-{{ $shop->nazwa_sklepu }}
+{{ $user->shop->nazwa_sklepu }}
 
 </td>
 
-<td>{{ $shop->link_sklepu }}   </td>
- <td>{{ $shop->saldo_sklepu }}   </td>
+<td>{{ $user->shop->link_sklepu }}   </td>
+ <td>{{ $user->shop->saldo_sklepu }}   </td>
 <td>
-{{$shop->user->name}}
+
+     {{$user->name}}       
 </td>
  <td>
 
-<a href="/shops/{{$shop->id}}/edit" class="btn btn-default">
+<a href="/shops/{{$user->shop->id}}/edit" class="btn btn-default">
 <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
 </a>
 {{--  {!! Form::open(['method'=>'DELETE','class'=>'form-inline','action'=>['PromotionsController@destroy',$shop->id]]) !!}
@@ -64,7 +66,7 @@ Wlasciciel
 
 </tbody>
 </table>
- {{ $shopsmanage->links() }} 
+ {{--  {{ $shopsmanage->links() }}   --}}
 </div>
  
 @endsection

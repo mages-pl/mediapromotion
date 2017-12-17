@@ -9,6 +9,10 @@ class Category extends Model
     //
 
     protected $fillable = [
-        'nazwa_kategorii'
+        'nazwa_kategorii',
+        'tag_kategorii',
+        'id_glownej_kategorii',
+        'status_kategorii',
+        'glowna'
     ];
 }

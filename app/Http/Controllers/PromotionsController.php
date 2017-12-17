@@ -75,13 +75,13 @@ public function update($id, CreatePromotionRequest $request)  {
 public function store(CreatePromotionRequest $request) {
 
 $promotion = new Promotion($request->all());
-    Auth::user()->promocje()->save($promotion);
+    Auth::user()->promotion()->save($promotion);
    
   // Promotion::create($request->all());
     //return redirect("promocje/".$promotion->id."/edit");
 //return $promotion;
 return redirect("/promotions-list");
-//return "store";
+
 }    
 public function promotionsmanage() {
     $promotionsall = DB::table('promotions')->latest()->paginate(10);

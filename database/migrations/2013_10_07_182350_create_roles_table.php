@@ -17,7 +17,7 @@ class CreateRolesTable extends Migration
             $table->increments('id');
             $table->string('nazwa_roli',128);
             $table->integer('user_id')->unsigned()->nullable();
-           // $table->foreign('user_id')->references('id')->on('users');
+           //$table->foreign('user_id')->references('id')->on('users');
             
             $table->timestamps();
         });

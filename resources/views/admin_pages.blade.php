@@ -3,7 +3,7 @@
 <div class="container-fluid" id="admin-page">
 @include("admin_menu")
  <div class="col-sm-10">
-
+@if(Auth::user()->role_id == 1)
  <h3 style="font-weight: 300;color: #777;">Postęp integracji</h3>
 <div class="progress">
 
@@ -16,6 +16,7 @@
 @endif
   </div>
   </div>
+  @endif
 
 <div class="panel panel-default">
 

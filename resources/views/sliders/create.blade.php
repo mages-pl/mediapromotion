@@ -21,9 +21,11 @@ Dodaj nowy slider
  
    --}}
 
-{{Form::open(['url'=>'sliders','class'=>'form-horizontal'])}}
+{{Form::open(['url'=>'sliders','files'=>true,'class'=>'form-horizontal'])}}
 
-@include('sliders.form')
+@include('shops.form_errors')
+
+@include('sliders.form',['ButtonSave'=>'Dodaj','Slider'=>'0'])
 
 {{Form::close()}}
    {{--  <a href="/slides/create" class="col-sm-12 btn btn-success">Dodaj nowy slider</a>

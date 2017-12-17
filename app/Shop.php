@@ -18,9 +18,9 @@ class Shop extends Model
 /*
 Sklep posiada właściciela
 */
-    public function user() { 
-        return $this->hasOne("App\User");
-    }
+    // public function user() { 
+    //     return $this->hasOne("App\User");
+    // }
 
   
 

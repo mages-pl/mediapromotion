@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CreateSliderRequest extends FormRequest
+class CreateCategoryRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,12 @@ class CreateSliderRequest extends FormRequest
     public function rules()
     {
         return [
-            'nazwa_slidera'=>'required',
-             'obrazek_slidera'=>'mimes:jpg,jpeg,png',
-              'status_slidera'=>'required',
-              'link_slidera'=>'required'
+             'nazwa_kategorii' => 'required',
+             'glowna' => 'required',
+             'status_kategorii' => 'required', 
+             'id_glownej_kategorii'=>'required',
+             'tag_kategorii' => 'required'
+
         ];
     }
 }

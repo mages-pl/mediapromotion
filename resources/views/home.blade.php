@@ -8,9 +8,16 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+
+    @foreach($sliders as $slider) 
+  @if($sliders->first() == $slider) 
+  <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+ @else 
     <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
+  @endif
+  
+  @endforeach
+
   </ol>
 
   <!-- Wrapper for slides -->
@@ -21,7 +28,7 @@
  @else 
  <div class="item">
   @endif
-      <img src="{{$slider->obrazek_slidera}}" alt="{{$slider->nazwa_slidera}}">
+      <img src="img/slider/{{$slider->obrazek_slidera}}" alt="{{$slider->nazwa_slidera}}">
     </div>
   @endforeach
 

@@ -16,7 +16,7 @@ use Image;
 
 use App\Product;
 
-use User;
+use App\User;
 
  
 
@@ -83,8 +83,11 @@ $shop = new Shop(
     }
 
 public function shopsmanage() {
-$shopsmanage = DB::table('shops')->latest()->paginate(10);
-
+$shopsmanage = User::latest()->get(); 
+// $user = User::find($id)->shop->name;
+    //$shopsmanage = DB::table('shops')->latest()->get(); 
+// paginate(10)
+ 
 return view('shops.shopsmanage')->with("shopsmanage",$shopsmanage);
 }
     public function edit($id) {
@@ -236,9 +239,6 @@ $img = Image::make($image_oryginal);
                          return redirect('shops/'.$aktualizuj_sklep->id.'/edit');
                       
             }
-       // }
-         
-      // return "Saved settings to shop";
-        
+      
     }
 }

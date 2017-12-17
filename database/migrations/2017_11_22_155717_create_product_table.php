@@ -26,6 +26,7 @@ class CreateProductTable extends Migration
             $table->string('obrazek_produktu',255)->nullable();
             $table->string('kategoria_produktu',255)->nullable();
             $table->string('url_produktu',255)->nullable();
+            $table->integer('wyroznienie_produktu')->unsigned()->default(0);
             $table->float('cena_produktu')->unsigned()->nullable();
             $table->float('stara_cena_produktu')->unsigned()->nullable();
             $table->integer('ilosc_produktu')->default(0);

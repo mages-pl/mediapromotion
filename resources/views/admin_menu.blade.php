@@ -43,13 +43,13 @@ Zarzadzaj promocjami</a>
 <i class="fa fa-picture-o" aria-hidden="true"></i>
 
 Bannery</a>
-
- <a href="/integrates" class="list-group-item">
+{{--  {{route(integrates) }}  --}}
+ <a href="/integrates/list" class="list-group-item">
 <i class="fa fa-retweet" aria-hidden="true"></i>
 Integracje</a>
 
  <a href="/productsmanage" class="list-group-item">
-<i class="fa fa-retweet" aria-hidden="true"></i>
+<i class="fa fa-shopping-cart" aria-hidden="true"></i>
 Zarzadzaj produktami</a>
 
  
